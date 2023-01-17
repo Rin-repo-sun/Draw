@@ -29,7 +29,7 @@ function loop() { //Always executed
 		ctx.arc(x, y, hankei, 0, Math.PI * 2, true);
 		ctx.fill();
 		ctx.lineWidth = hankei / 9;
-		ctx.strokeStyle = "red";
+		ctx.strokeStyle = "blue";
 		for (let j=1; j<5; ++j) {
 			ctx.beginPath();
 			ctx.arc(x, y, hankei / 5 * j, kakudoA + 0, kakudoA + (Math.PI * 2 - Math.PI * 2 / 10), false);
