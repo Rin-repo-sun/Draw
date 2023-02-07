@@ -29,7 +29,7 @@ function setup(){
 }
 
 function loop(){
-  for(let i = 0; i < maru.length; i++) {
+  for(let i = 0; i < maru.length; ++i) {
     maru[i].kyori = Math.sqrt(Math.pow(curYubiX - maru[i].x, 2) + Math.pow(curYubiY - maru[i].y, 2));
     maru[i].kakudo = Math.atan2(curYubiY - maru[i].y, curYubiX - maru[i].x);
     if(maru[i].kyori < unitKyori / 2) {
@@ -49,7 +49,7 @@ function loop(){
     let hankei = unitKyori / 2;
     hankei = hankei * parR;
 
-    ctx.filStyle = "rgb(" + parR * 255 + "," + parR * 255 + "," + parR * 255 + ")";
+    ctx.fillStyle = "rgb(" + parR * 255 + "," + parR * 255 + "," + parR * 255 + ")";
     if(maru[i].touched) ctx.fillStyle = "red";
     ctx.beginPath();
     ctx.arc(maru[i].x, maru[i].y, hankei, maru[i].kakudo - Math.PI / 2, maru[i].kakudo + Math.PI / 2, true);
