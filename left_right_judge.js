@@ -21,13 +21,13 @@ let base = new Array();
 let unitKyori;
 
 function setup(){
-  for(let i=0; i<4; i++) {
+  for(let i=0; i<4; ++i) {
     ten[i] = new Point(screenWidth / 2, screenHeight / 2);
   }
   let unitYokoKazu = 20;
   let yokoInterval = screenWidth / (unitYokoKazu - 1);
   let tateInterval = yokoInterval * Math.sin(Math.PI / 3);
-  let unitTateKazu = parseInt(screenHeight / tateInterval) + 1;
+  let unitTateKazu = Math.ceil(screenHeight / tateInterval) + 1;
   unitKyori = yokoInterval;
   for(let i=0; i< unitYokoKazu * unitTateKazu; ++i) {
     let tateNum = parseInt(i / unitYokoKazu);
@@ -40,7 +40,7 @@ function setup(){
 }
 
 function loop(){
-  for(let i=0; i<ten.length; i++) {
+  for(let i=0; i<ten.length; ++i) {
     if(i==0){
       if(yubiTouched){
         ten[i].x = curYubiX;
@@ -56,13 +56,13 @@ function loop(){
 
   for(let i=0; i < base.length; ++i){
     let hankei = unitKyori / 4;
-    let sayu = sayuHantei(ten[3], ten[0].y, base[i]);
+    let sayu = sayuHantei(ten[3], ten[0], base[i]);
     if(sayu == 1){
       ctx.strokeStyle = "red";
     } else {
       ctx.strokeStyle = "black";
     }
-    //ctx.strokeStyle = "black";
+
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.arc(base[i].x, base[i].y, hankei, 0, Math.PI * 2, true);
@@ -70,30 +70,16 @@ function loop(){
   }
 
   ctx.beginPath();
-  ctx.lineWidth = 4;
+  ctx.lineWidth = 8;
   ctx.strokeStyle = "black";
   ctx.moveTo(ten[0].x, ten[0].y);
   ctx.bezierCurveTo(ten[1].x, ten[1].y, ten[2].x, ten[2].y, ten[3].x, ten[3].y);
-  ctx.stroke();
-
-  ctx.beginPath();
-  ctx.lineWidth = 1;
-  ctx.moveTo(ten[0].x, ten[0].y);
-  ctx.lineTo(ten[1].x, ten[1].y);
-  ctx.lineTo(ten[2].x, ten[2].y);
-  ctx.lineTo(ten[3].x, ten[3].y);
   ctx.stroke();
 
   let hankei = 35;
   ctx.fillStyle = "white";
   ctx.strokeStyle = "black";
   ctx.lineWidth = 4;
-  for(let i=0; i<ten.length; ++i) {
-    ctx.beginPath();
-    ctx.arc(ten[i].x, ten[i].y, hankei, 0, Math.PI * 2, true);
-    ctx.fill();
-    ctx.stroke();
-  }
 
   ctx.beginPath();
   ctx.arc(ten[0].x, ten[0].y, hankei, 0, Math.PI * 2, true);
