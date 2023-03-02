@@ -95,7 +95,7 @@ let bezCtLoc = [
 ];
 
 function setup(){
-	let henLength = 400;
+	let henLength = 500;
 	choten[0] = new Choten(henLength, henLength, henLength);
 	choten[1] = new Choten(henLength, henLength, -henLength);
 	choten[2] = new Choten(-henLength, henLength, -henLength);
