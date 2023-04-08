@@ -1,7 +1,7 @@
 function rnd() {
     let random = Math.random();
 
-    random *= 100;
+    random *= 1000;
 
     return Math.floor(random);
 }
