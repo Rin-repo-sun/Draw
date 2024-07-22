@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>美的教育の視覚表現</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/p5@[p5_version]/lib/p5.js"></script> -->
+</head>
+<body>
+    <script>
+        // p5.jsを使用したスケッチ
+        function setup() {
+            createCanvas(800, 600);
+            noLoop();
+        }
+
+        function draw() {
+            background(255);
+            noStroke();
+            
+            // 円の色と位置を変えて、バランスと調和の美的原則を示す
+            fill(255, 0, 0);
+            ellipse(200, 300, 150, 150);
+            fill(0, 255, 0);
+            ellipse(400, 300, 150, 150);
+            fill(0, 0, 255);
+            ellipse(600, 300, 150, 150);
+            
+            // 美的なテキストを表示
+            fill(0);
+            textSize(24);
+            textAlign(CENTER);
+            // text('色のバランスと調和', width / 2, height - 50);
+            text('Harmony', width / 2, height - 50);
+        }
+    </script>
+</body>
+</html>
