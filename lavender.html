@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ラベンダー</title>
+<style>
+  body { margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center; }
+  canvas { border: 1px solid #ccc; }
+</style>
+</head>
+<body>
+<canvas id="lavenderCanvas"></canvas>
+<script>
+  const canvas = document.getElementById('lavenderCanvas');
+  const ctx = canvas.getContext('2d');
+
+  canvas.width = window.innerWidth;
+  canvas.height = 100; // 高さを100pxに設定
+
+  let gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+  gradient.addColorStop(0, 'rgb(148, 0, 211)');
+  gradient.addColorStop(1, 'rgb(75, 0, 130)');
+
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+</script>
+</body>
+</html>
